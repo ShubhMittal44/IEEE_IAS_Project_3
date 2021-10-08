@@ -1,0 +1,486 @@
+{% extends "base-home.html" %}
+{% load static %}
+
+{% block home %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/home.css' %}">
+<div>
+<section class="hero-area">
+    <div class="hero-post-slides owl-carousel">
+
+        <!-- Single Hero Post -->
+        <div class="single-hero-post bg-overlay">
+            <!-- Post Image -->
+            <div class="slide-img slide-img1 bg-img" ></div>
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <!-- Post Content -->
+                        <div class="hero-slides-content text-center">
+                            <h2>Plants exist in the weather and light rays that surround them</h2>
+                            <p>Our website is a one stop destination to all people interested in gardening, providing them with the saplings, seeds, tools, from respective vendors andlocal nurseries and giving them all needed information and support. Our community tab is a space for our customers to interact, learn, and show offtheir gardens.</p>
+                            <div class="welcome-btn-group">
+                                <a href="#" class="btn alazea-btn mr-30 get-started">GET STARTED</a>
+                                <a href="#" class="btn alazea-btn active contact">CONTACT US</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Hero Post -->
+        <div class="single-hero-post bg-overlay">
+            <!-- Post Image -->
+            <div class="slide-img slide-img2 bg-img"></div>
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <!-- Post Content -->
+                        <div class="hero-slides-content text-center">
+                            <h2>Plants exist in the weather and light rays that surround them</h2>
+                            <p>Our website is a one stop destination to all people interested in gardening, providing them with the saplings, seeds, tools, from respective vendors andlocal nurseries and giving them all needed information and support. Our community tab is a space for our customers to interact, learn, and show offtheir gardens.</p>
+                            <div class="welcome-btn-group">
+                                <a href="#" class="btn alazea-btn mr-30 get-started">GET STARTED</a>
+                                <a href="#" class="btn alazea-btn active contact">CONTACT US</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--  Hero Area End ##### -->
+
+<!-- #Service Area Start ##### -->
+<section class="our-services-area bg-gray section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>OUR SERVICES</h2>
+                    <p>We provide the perfect service for you.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-12 col-lg-5">
+                <div class="alazea-service-area mb-100">
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Icon -->
+                        <div class="service-icon mr-30">
+                            <img src="{% static 'images/home/core-img/s1.png' %}" alt="">
+                        </div>
+                        <!-- Content -->
+                        <div class="service-content">
+                            <h5>Plants Care</h5>
+                            <p>Taking care of plants can be tricky. You need to consider multiple variables, such as lighting and watering.</p>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Icon -->
+                        <div class="service-icon mr-30">
+                            <img src="{% static 'images/home/core-img/s2.png' %}" alt="">
+                        </div>
+                        <!-- Content -->
+                        <div class="service-content">
+                            <h5>Pressure Washing</h5>
+                            <p>Pressure washing is a practical way to remove years of dirt, mildew and algae from your siding for a fresh appearance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
+                        <!-- Icon -->
+                        <div class="service-icon mr-30">
+                            <img src="{% static 'images/home/core-img/s3.png' %}" alt="">
+                        </div>
+                        <!-- Content -->
+                        <div class="service-content">
+                            <h5>Tree Service &amp; Trimming</h5>
+                            <p>
+                                Pruning is about working with a plant's natural growth pattern as it is developing, as well as for maintenance for a mature specimen.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="alazea-video-area bg-overlay mb-100">
+                    <img src="{% static 'images/home/bg-img/23.jpg' %}" alt="">
+                    <a href="https://www.youtube.com/watch?v=k3AiRLm-DpU" class="video-icon">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Service Area End ##### -->
+
+
+<!-- ##### Srvice Area Start ##### -->
+<section class="alazea-portfolio-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>OUR PRODUCTS</h2>
+                    <p>We devote all of our experience and efforts for creation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="alazea-portfolio-filter">
+                    <div class="portfolio-filter">
+                        <button class="btn active" data-filter="*">All</button>
+                        <button class="btn" data-filter=".design">Coffee Design</button>
+                        <button class="btn" data-filter=".garden">Garden</button>
+                        <button class="btn" data-filter=".home-design">Home Design</button>
+                        <button class="btn" data-filter=".office-design">Office Design</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row alazea-portfolio">
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design home-design wow fadeInUp" data-wow-delay="100ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail1 bg-img"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/16.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 1">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail2 bg-img"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/17.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 2">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden design wow fadeInUp" data-wow-delay="300ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail3 bg-img"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/18.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 3">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden office-design wow fadeInUp" data-wow-delay="400ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail4 bg-img"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/19.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 4">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item design office-design wow fadeInUp" data-wow-delay="100ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail5 bg-img" ></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/20.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item garden wow fadeInUp" data-wow-delay="200ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail6 bg-img"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/21.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 6">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Single Portfolio Area -->
+            <div class="col-12 col-lg-6 single_portfolio_item home-design wow fadeInUp" data-wow-delay="300ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail .portfolio-thumbnail7 bg-img"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="{% static 'images/home/bg-img/22.jpg' %}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 7">
+                        <div class="port-hover-text">
+                            <h3>Minimal Flower Store</h3>
+                            <h5>Office Plants</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+</section>
+<!-- ##### Portfolio Area End ##### -->
+
+<!-- ##### Product Area Start ##### -->
+<section class="new-arrivals-products-area bg-gray section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>NEW ARRIVALS</h2>
+                    <p>We have the latest products, it must be exciting for you</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+                    <!-- Product Image -->
+                    <div class="product-img">
+                        <a href="shop-details.html"><img src="{% static 'images/home/bg-img/9.jpg' %}" %} alt=""></a>
+                        <!-- Product Tag -->
+                        <div class="product-tag">
+                            <a href="#">Hot</a>
+                        </div>
+                        <div class="product-meta d-flex">
+                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Info -->
+                    <div class="product-info mt-15 text-center">
+                        <a href="shop-details.html">
+                            <p>Cactus Flower</p>
+                        </a>
+                        <h6>₹899.00</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="200ms">
+                    <!-- Product Image -->
+                    <div class="product-img">
+                        <a href="shop-details.html"><img src="{% static 'images/home/bg-img/10.jpg' %}" alt=""></a>
+                        <div class="product-meta d-flex">
+                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Info -->
+                    <div class="product-info mt-15 text-center">
+                        <a href="shop-details.html">
+                            <p>Calathea Makoyana</p>
+                        </a>
+                        <h6>₹999.00</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+                    <!-- Product Image -->
+                    <div class="product-img">
+                        <a href="shop-details.html"><img src="{% static 'images/home/bg-img/11.jpg' %}" alt=""></a>
+                        <div class="product-meta d-flex">
+                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Info -->
+                    <div class="product-info mt-15 text-center">
+                        <a href="shop-details.html">
+                            <p>Ponytail Palm</p>
+                        </a>
+                        <h6>₹799.00</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="400ms">
+                    <!-- Product Image -->
+                    <div class="product-img">
+                        <a href="shop-details.html"><img src="{% static 'images/home/bg-img/12.jpg' %}" alt=""></a>
+                        <!-- Product Tag -->
+                        <div class="product-tag sale-tag">
+                            <a href="#">Hot</a>
+                        </div>
+                        <div class="product-meta d-flex">
+                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                            <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Product Info -->
+                    <div class="product-info mt-15 text-center">
+                        <a href="shop-details.html">
+                            <p>Fiddle Leaf Ficus</p>
+                        </a>
+                        <h6>₹1199.00</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 text-center">
+                <a href="#" class="btn alazea-btn">View All</a>
+                <!--View all will lead to products page-->
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ##### Product Area End ##### -->
+
+<!-- ##### Blog Area Start ##### -->
+<section class="alazea-blog-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>LATEST NEWS</h2>
+                    <p>The breaking news about Gardening &amp; House plants</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!-- Single Blog Post Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post mb-100">
+                    <div class="post-thumbnail mb-30">
+                        <a href="single-post.html"><img src="{% static 'images/home/bg-img/6.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="single-post.html" class="post-title">
+                            <h5>Garden designers across the country forecast ideas shaping the gardening world in 2018</h5>
+                        </a>
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 20 Jun 2021</a>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Sai Harsha Varma</a>
+                        </div>
+                        <p class="post-excerpt">Avoid placing your plant next to heat sources (radiator) or in cold or windy spots. Brutal variations in temperature and humidity can be detrimental. Stability is key. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post mb-100">
+                    <div class="post-thumbnail mb-30">
+                        <a href="single-post.html"><img src="{% static 'images/home/bg-img/7.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="single-post.html" class="post-title">
+                            <h5>2018 Midwest Tree and Shrub Conference: Resilient Plants for a Lasting Landscape</h5>
+                        </a>
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 06 March 2021</a>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Shubh Mittal</a>
+                        </div>
+                        <p class="post-excerpt">For many, plant maintenance is still a tricky discipline, between a science and an art. Too much water - too little water - direct or indirect sunlight, I know the confusion. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post mb-100">
+                    <div class="post-thumbnail mb-30">
+                        <a href="single-post.html"><img src="{% static 'images/home/bg-img/8.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="single-post.html" class="post-title">
+                            <h5>The summer coming up, it’s time for both us and the flowers to soak up the sunshine</h5>
+                        </a>
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 19 August 2021</a>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i>Pakhi Singh</a>
+                        </div>
+                        <p class="post-excerpt">More and more people are getting obsessed with plants: they live in reduced urban spaces, and they want to get back in touch with nature.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ##### Blog Area End ##### -->
+
+{% include 'mission.html' %}
+</div>
+
+<!-- ##### All Javascript Files ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="{% static 'js/home/jquery/jquery-2.2.4.min.js' %}"></script>
+<!-- Popper js -->
+<script src="{% static 'js/home/bootstrap/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'js/home/bootstrap/bootstrap.min.js' %}"></script>
+<!-- All Plugins js -->
+<script src="{% static 'js/home/plugins/plugins.js' %}"></script>
+<!-- Active js -->
+<script src="{% static 'js/home/active.js' %}"></script>
+
+{% endblock home %}

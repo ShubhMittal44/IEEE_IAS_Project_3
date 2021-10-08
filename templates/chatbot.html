@@ -1,0 +1,42 @@
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/chatbot.css' %}">
+<div class="chat-bubble">
+  <div class="msgs"> </div>
+  <div class="status"></div>
+</div>
+<div class="chat-box hide">
+    <div class="chat-heading">
+      <h1>Chat with us!</h1>
+    </div>
+    <div class="inner-container">
+        <div id="container">     
+            <div class="chat-container darker">
+                <p class="voice2text">
+                    Hi! How can I help you today?
+                <!-- Say 1: What is the difference between bright, medium and low light plants?<br>
+                Say 2: Which indoor plants are the easiest to care for?<br>
+                Say 3: Which plants are hardy and can take some level of neglect?<br>
+                Say 4: We only have the fluorescent light in our office. Which plants should we choose?<br>
+                Say 5: I don't have much light in my home. Which plants should I try?<br>
+                Say 6: I have a lot of sun in my space. Which plants should I choose?<br>
+                Say 7: Do you offer any care tips for plants?<br>
+                Say 8: What fertilizer do you recommend for indoor plants?<br>
+                Say 9: How can I tell if a plant is struggling?<br>
+                Say 10: Can I have a plant replaced using an existing planter?<br>
+                Say 11: Can I replace a plant I bought in nursery pot?<br>
+                Say 12: What if my plants/planters arrived damaged?<br>
+                Say 13: I have suggestions/feedback for greenway.com? How do i convey the same to you? -->
+                </p>
+            </div>
+        </div>
+    </div>                 
+    <div class="voiceactivate">
+        <button class="chat-btn voice"><img src="{% static 'images/chatbot/mic.png' %}"></button>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+{% endblock content %}

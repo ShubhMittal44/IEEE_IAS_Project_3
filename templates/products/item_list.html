@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/items.css' %}">
+
+<div class="item-container">
+    {% for item in items %}
+    <!-- Individual Item -->
+    <div class="card">
+        <!-- Item Image -->
+        <a href="{% url 'itemView' the_slug=item.6 %}">
+        <div class="card-image" style="background: url('/media/{{ item.0 }}') no-repeat; background-size: 100% 100%;">
+            {% if item.7 != 0 %}
+            <span class="offers">Save {{ item.7 }}%</span>
+            {% endif%}
+        </div></a> 
+        <!-- Item Description -->
+        <div class="card-description">
+            {% if item.5 != item.2 %}
+            <span class="oldprice"><strike>Rs. {{ item.2 }}</strike></span>
+            {% endif %}
+            <br><span class="price">Rs. {{ item.5 }} <br> </span>
+            <a class="title" href="{% url 'itemView' the_slug=item.6 %}">{{ item.4}} <br></a>
+            Rating : {{ item.1 }} <br>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

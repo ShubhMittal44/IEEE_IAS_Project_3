@@ -77,4 +77,41 @@ class ItemRating(models.Model):
     def __str__(self) -> str:
         return str(self.title)
 
+class Bstates(models.Model):
+
+
+    states = models.CharField(max_length = 50, unique = True)
+    def __str__(self):
+        return self.states
+
+
+class Billing(models.Model):
+    Bfirst_name = models.CharField(max_length= 264)
+    Blast_name = models.CharField(max_length= 264)
+    Bcheckout_states = models.ForeignKey(Bstates, on_delete = models.CASCADE, related_name ='Bstates')
+    Bstreet = models.CharField(max_length= 264)
+    Bapartment = models.CharField(max_length= 264)
+    Bcity = models.CharField(max_length= 264)
+    Bzip = models.DecimalField(decimal_places=0, max_digits=6)
+    Bphone = models.DecimalField(decimal_places=0, max_digits=10)
+    Bemail = models.EmailField(max_length= 264)
+
+class Shipping(models.Model):
+    Sfirst_name = models.CharField(max_length= 264)
+    Slast_name = models.CharField(max_length= 264)
+    Scheckout_states = models.ForeignKey(Bstates, on_delete = models.CASCADE, related_name ='Sstates')
+    Sstreet = models.CharField(max_length= 264)
+    Sapartment = models.CharField(max_length= 264)
+    Scity = models.CharField(max_length= 264)
+    Szip = models.DecimalField(decimal_places=0, max_digits=6)
+    Sphone = models.DecimalField(decimal_places=0, max_digits=10)
+    Semail = models.EmailField(max_length= 264)
+
+class Payment(models.Model):
+    cardno = models.DecimalField(decimal_places=0, max_digits=16)
+    namecard = models.CharField(max_length= 264)
+    cvv = models.DecimalField(decimal_places=0, max_digits=3)
+    validity = models.DateTimeField()
+    
+
 

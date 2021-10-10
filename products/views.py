@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq
+from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, Billing, Bstates, Payment, Shipping
 
 # Create your views here.
 
@@ -83,7 +83,7 @@ def addReview(request, the_slug):
     if request.method == "POST":
         currentItem = ItemMain.objects.filter(slug = the_slug)[0]
         rating = ItemRating.objects.filter(title=currentItem)[0]
-        rating.ratingCount += 1;
+        rating.ratingCount += 1
         rating.rating += int(request.POST.get('rate', 5))
         rating.feedback = request.POST.get('feeds', "")
         rating.save()
@@ -101,7 +101,32 @@ def cart(request):
 
 def checkout(request):
     context = {}
-    return render(request, 'checkout.html', context)
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            Bfirst_name = request.POST['Bfirst_name']
+            Blast_name = request.POST['Blast_name']
+            Bcheckout_states = Bstates.objects.get(category = request.POST['Bstates'])
+            Bstreet = request.POST['Bstreet']
+            Bapartment = request.POST['Bapartment']
+            Bcity = request.POST['Bcity']
+            Bzip = request.POST['Bzip']
+            Bphone = request.POST['Bphone']
+            Bemail = request.POST['Bemail']    
+            cardno = request.POST['cardno']
+            namecard = request.POST['namecard']
+            validity = request.POST['validity']
+            cvv = request.POST['cvv']
+            billing = Billing.objects.create(Bfirst_name=Bfirst_name, Blast_name=Blast_name, Bcheckout_states=Bcheckout_states, Bstreet=Bstreet, Bapartment=Bapartment, Bcity=Bcity, Bzip=Bzip, Bphone=Bphone, Bemail=Bemail)
+            shipping = Shipping.objects.create(Sfirst_name=Bfirst_name, Slast_name=Blast_name, Scheckout_states=Bcheckout_states, Sstreet=Bstreet, Sapartment=Bapartment, Scity=Bcity, Szip=Bzip, Sphone=Bphone, Semail=Bemail)
+            payment = Payment.objects.create(cardno=cardno, namecard=namecard, validity=validity, cvv=cvv)
+            billing.save()
+            payment.save()
+            shipping.save()        
+            return render(request, 'success')
+        else:
+            return redirect('login')
+    else:
+        return render(request, 'checkout.html', context)    
 
 def our_team(request):
     context = {}

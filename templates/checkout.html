@@ -27,35 +27,36 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-10 ftco-animate">
-						<form action="#" class="billing-form">
+						<form method='POST' action="#" class="billing-form">
+							{% csrf_token %}
 							<h3 class="mb-4 billing-heading">Billing Details</h3>
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Firt Name</label>
-	                  <input type="text" class="form-control" placeholder="Enter First Name">
+	                	<label for="firstname">First Name</label>
+	                  <input type="text" name="Bfirst_name" class="form-control" placeholder="Enter First Name">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Last Name</label>
-	                  <input type="text" class="form-control" placeholder="Enter Last Name">
+	                  <input type="text" name="Blast_name" class="form-control" placeholder="Enter Last Name">
 	                </div>
                 </div>
                 <div class="w-100"></div>
 		            <div class="col-md-12">
 		            	<div class="form-group">
-		            		<label for="country">State / Country</label>
+		            		<label for="country">State</label>
 		            		<div class="select-wrap">
 		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                  <select name="" id="" class="form-control">
-		                  	<option value="">Maharashtra</option>
-		                    <option value="">Tamil Nadu</option>
-		                    <option value="">West Bengal</option>
-		                    <option value="">Telangana</option>
-		                    <option value="">Delhi</option>
-		                    <option value="">Karnataka</option>
-							<option value="">Gujarat</option>
+		                  <select name="Bstates" id="Bstates" class="form-control">
+		                  	<option value="Maharashtra">Maharashtra</option>
+		                    <option value="Tamil Nadu">Tamil Nadu</option>
+		                    <option value="West Bengal">West Bengal</option>
+		                    <option value="Telangana">Telangana</option>
+		                    <option value="Delhi">Delhi</option>
+		                    <option value="Karnataka">Karnataka</option>
+							<option value="Gujarat">Gujarat</option>
 		                  </select>
 		                </div>
 		            	</div>
@@ -64,38 +65,38 @@
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="streetaddress">Street Address</label>
-	                  <input type="text" class="form-control" placeholder="House number and street name">
+	                  <input type="text" name="Bstreet" class="form-control" placeholder="House number and street name">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                  <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
+	                  <input type="text" name="Bapartment" class="form-control" placeholder="Apartment, suite, unit etc: (optional)">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Town / City</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="Bcity" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 		            		<label for="postcodezip">Postcode / ZIP *</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="Bzip" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Phone</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="Bphone" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="emailaddress">Email Address</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="email" name="Bemail" class="form-control" placeholder="">
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -111,14 +112,14 @@
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Firt Name</label>
-	                  <input type="text" class="form-control" placeholder="Enter First Name">
+	                	<label for="firstname">First Name</label>
+	                  <input type="text" name="Sfirst_name" class="form-control" placeholder="Enter First Name">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Last Name</label>
-	                  <input type="text" class="form-control" placeholder="Enter Last Name">
+	                  <input type="text" name="Slast_name" class="form-control" placeholder="Enter Last Name">
 	                </div>
                 </div>
                 <div class="w-100"></div>
@@ -127,14 +128,14 @@
 		            		<label for="country">State / Country</label>
 		            		<div class="select-wrap">
 		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                  <select name="" id="" class="form-control">
-							<option value="">Maharashtra</option>
-		                    <option value="">Tamil Nadu</option>
-		                    <option value="">West Bengal</option>
-		                    <option value="">Telangana</option>
-		                    <option value="">Delhi</option>
-		                    <option value="">Karnataka</option>
-							<option value="">Gujarat</option>
+		                  <select name="Sstates" id="Sstates" class="form-control">
+							<option value="Maharashtra">Maharashtra</option>
+		                    <option value="Tamil Nadu">Tamil Nadu</option>
+		                    <option value="West Bengal">West Bengal</option>
+		                    <option value="Telangana">Telangana</option>
+		                    <option value="Delhi">Delhi</option>
+		                    <option value="Karnataka">Karnataka</option>
+							<option value="Gujarat">Gujarat</option>
 		                  </select>
 		                </div>
 		            	</div>
@@ -143,38 +144,38 @@
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="streetaddress">Street Address</label>
-	                  <input type="text" class="form-control" placeholder="House number and street name">
+	                  <input type="text" name="Sstreet" class="form-control" placeholder="House number and street name">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                  <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
+	                  <input type="text" name="Sapartment" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Town / City</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="Scity" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 		            		<label for="postcodezip">Postcode / ZIP *</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="Szip" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Phone</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="Sphone" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="emailaddress">Email Address</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="email" name="Semail" class="form-control" placeholder="">
 	                </div>
 				</div>
                 </div>
@@ -216,25 +217,25 @@
 			  <div class="col-md-12">
 			<div class="form-group">
 				<label for="cardnumber">Card Number</label>
-			  <input type="number" class="form-control" placeholder="">
+			  <input type="number" name="cardno" class="form-control" placeholder="">
 			</div>
 		  </div>
 		  <div class="col-md-12">
 			<div class="form-group">
 				<label for="cardname">Name on the Card</label>
-			  <input type="text" class="form-control" placeholder="">
+			  <input type="text" name="namecard" class="form-control" placeholder="">
 			</div>
 		</div>
 			<div class="col-md-6">
 				<div class="form-group">
 				<label for="validity">Valid Through</label>
-			  <input type="month" class="form-control" placeholder="">
+			  <input type="month" name="validity" class="form-control" placeholder="">
 			</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="cvv">CVV</label>
-			  <input type="password" class="form-control" placeholder="" maxlength="3">
+			  <input type="password" name="cvv" class="form-control" placeholder="" maxlength="3">
 			</div>
 			</div>
 		</div>
@@ -271,7 +272,7 @@
 								</div>
 							</div>
 						</div>
-								<p><a href="success" class="btn btn-primary py-3 px-4">Place an order</a></p>
+								<p><a href="#" class="btn btn-primary py-3 px-4">Place an order</a></p>
 								</div>
 	          	</div>
 	          	

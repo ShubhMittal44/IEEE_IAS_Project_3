@@ -1,6 +1,7 @@
+from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
-from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, Billing, Bstates, Payment, Shipping
-
+from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping
+import json
 # Create your views here.
 
 def home(request):
@@ -33,50 +34,78 @@ def item_list(request):
     return render(request, "products/item_list.html", context)
 
 def itemView(request, the_slug):
-    context = {}
-    p = []
-    d=[]
+    if request.method == 'GET':
+        context = {}
+        p = []
+        d=[]
 
-    currentItem = ItemMain.objects.filter(slug = the_slug)[0]
-    title = currentItem.title
-    images = ItemsImages.objects.filter(title=ItemMain.objects.filter(title = title)[0])
-    rating = ItemRating.objects.filter(title=ItemMain.objects.filter(title = title)[0])[0]
-    descrip = ItemsSpecifications.objects.filter(title=ItemMain.objects.filter(title = title)[0])[0]
-    faq = ItemFaq.objects.filter(title=ItemMain.objects.filter(title = title)[0])
+        currentItem = ItemMain.objects.filter(slug = the_slug)[0]
+        title = currentItem.title
+        images = ItemsImages.objects.filter(title=ItemMain.objects.filter(title = title)[0])
+        rating = ItemRating.objects.filter(title=ItemMain.objects.filter(title = title)[0])[0]
+        descrip = ItemsSpecifications.objects.filter(title=ItemMain.objects.filter(title = title)[0])[0]
+        faq = ItemFaq.objects.filter(title=ItemMain.objects.filter(title = title)[0])
 
-    #produect
-    price = currentItem.price
-    offer = currentItem.offers
-    newPrice = price - (price * offer)//100
-    p.append(title)
-    p.append(price)
-    p.append(offer)
-    p.append(newPrice)
-    p.append(currentItem.availablity)
-    p.append(currentItem.shippingCharges)
-    p.append(rating.ratingCount)
-    p.append(rating.ratingValue)
-    p.append(currentItem.plantingAndCare)
-    p.append(currentItem.slug)
+        #produect
+        price = currentItem.price
+        offer = currentItem.offers
+        newPrice = price - (price * offer)//100
+        p.append(title)
+        p.append(price)
+        p.append(offer)
+        p.append(newPrice)
+        p.append(currentItem.availablity)
+        p.append(currentItem.shippingCharges)
+        p.append(rating.ratingCount)
+        p.append(rating.ratingValue)
+        p.append(currentItem.plantingAndCare)
+        p.append(currentItem.slug)
 
-    #description
-    d.append(currentItem.description)
-    d.append(descrip.commonName)
-    d.append(descrip.plantSpread)
-    d.append(descrip.maxHeight)
-    d.append(descrip.sunlight)
-    d.append(descrip.watering)
-    d.append(descrip.soil)
-    d.append(descrip.temp)
-    d.append(descrip.ferti)
-    d.append(descrip.bloomTime)
+        #description
+        d.append(currentItem.description)
+        d.append(descrip.commonName)
+        d.append(descrip.plantSpread)
+        d.append(descrip.maxHeight)
+        d.append(descrip.sunlight)
+        d.append(descrip.watering)
+        d.append(descrip.soil)
+        d.append(descrip.temp)
+        d.append(descrip.ferti)
+        d.append(descrip.bloomTime)
 
-    context['products'] = p
-    context['images'] = images
-    context['des'] = d
-    context['faq'] = faq
+        context['products'] = p
+        context['images'] = images
+        context['des'] = d
+        context['faq'] = faq
 
-    return render(request, 'products/single_product.html', context)
+        return render(request, 'products/single_product.html', context)
+    else:
+        cartItem = json.loads(request.body)
+        print(cartItem)
+        print(cartItem.get('user', ''))
+        print(cartItem.get('item', ''))
+        cartModel = UserCart.objects.filter(
+            user = User.objects.filter(username = cartItem.get('user', ''))[0],
+            title = ItemMain.objects.filter(title=cartItem.get('item', ''))[0],
+        )
+        print(cartModel)
+        if cartModel:
+            cartModel[0].total += 1
+            cartModel[0].save()
+        else:
+            cartModel = UserCart(
+                user = User.objects.filter(username = cartItem.get('user', ''))[0],
+                title = ItemMain.objects.filter(title=cartItem.get('item', ''))[0],
+                total = 1
+            )
+            cartModel.save()
+
+
+        return redirect('itemView', the_slug=the_slug)
+
+
+    
+
 
 def addReview(request, the_slug):
 
@@ -97,6 +126,29 @@ def faq(request):
 
 def cart(request):
     context = {}
+    if request.method == "GET":
+        print('called')
+        user = request.user
+        items = UserCart.objects.filter(
+            user = User.objects.filter(username = user)[0]
+            )
+        print(items)
+        l = []
+        for i in items:
+            ll = []
+            item =ItemMain.objects.filter(title = i.title)[0]
+            ll.append(ItemsImages.objects.filter(title=item)[0].image)
+            ll.append(i.title)
+            price = item.price
+            offer = item.offers
+            newPrice = price - (price * offer)//100
+            ll.append(newPrice)
+            ll.append(i.total)
+            l.append(ll)
+        print(l)
+        context['items'] = l
+        
+    print(context)
     return render(request, 'cart.html', context)
 
 def checkout(request):

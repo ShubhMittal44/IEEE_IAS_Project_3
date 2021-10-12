@@ -9,10 +9,12 @@
     <header class="cart-container">
       <h1>Shopping Cart</h1>
       
-      <span class="count">{{ itemCount }} items in the bag</span>
+      <span class="count">{{ items|length }} items in the bag</span>
     </header>
     <!-- End Header -->
-  
+    <script>
+      console.log(" {{ items }} ")
+    </script>
     <!-- Product List -->
     <section class="cart-container">
       <div v-if="products.length > 0">

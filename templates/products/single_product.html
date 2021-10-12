@@ -5,7 +5,27 @@
 <link rel="stylesheet" href="{% static 'css/single_product.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <script src="https://use.fontawesome.com/a6f0361695.js"></script>
-    
+<script>
+	window.CSRF_TOKEN={% csrf_token %};
+</script>
+<script>
+	
+	function f1(){
+		var token = '{{ csrf_token }}';
+		console.log(token);
+		alert("hi");
+		fetch("{% url 'itemView' the_slug=products.9 %}", {
+		method: "POST",
+		headers:{'X-CSRFToken':token},
+		body: JSON.stringify({user: "{{ user }}", item : "{{ products.0 }}" })
+		}).then(res => {
+		console.log("Request complete! response:", res);
+		}).catch(err => {
+			console.log(err);
+		});
+	}
+</script>
+
 <div class = "card-wrapper">
 	  <div class = "product-imgs" style="width: 45%; margin: 1%;">
 		<div class = "img-display">
@@ -67,7 +87,7 @@
 		 </div>
 	  <p class="note" style="font-size: 0.8rem;">*Images are for reference purposes only. Actual product may vary in shape or appearance based on climate, age, height, etc. The product is replaceable but not returnable.</p><br>
 	  <div class="button-abc">
-		  <button class="cart-button">
+		  <button class="cart-button" onClick="f1();">
 			  <span class="add-to-cart" style="color: black; font-weight: 900; font: size 1rem;">Add to cart</span>
 			  <span class="added" style="color: black; font-weight: 900; font-size:1rem;">Added</span>
 			  <i class="fas fa-shopping-cart"></i>
@@ -198,5 +218,6 @@
   
 <script src="{% static 'js/single_product.js' %}"></script>
 <script src="{% static 'js/single_product1.js' %}"></script>
+
 
 {% endblock content %}

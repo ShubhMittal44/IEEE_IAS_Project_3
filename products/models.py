@@ -2,7 +2,8 @@ from django.db import models
 from django.conf import settings
 from django.db.models.base import Model
 from django.utils.text import slugify
-import uuid
+from django.contrib.auth.models import User
+
 
 
 class ItemsCat(models.Model):
@@ -76,6 +77,15 @@ class ItemRating(models.Model):
 
     def __str__(self) -> str:
         return str(self.title)
+
+
+class UserCart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.ForeignKey(ItemMain, on_delete=models.CASCADE)
+    total = models.IntegerField()
+
+    def __str__(self) -> str:
+        return str(str(self.user) + " -> " + str(self.title))
 
 class Bstates(models.Model):
 

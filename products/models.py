@@ -63,7 +63,6 @@ class ItemFaq(models.Model):
     def __str__(self) -> str:
         return str(self.title)
 
-
 class ItemRating(models.Model):
     title = models.ForeignKey(ItemMain, on_delete=models.CASCADE)
     ratingCount = models.IntegerField()
@@ -87,8 +86,8 @@ class UserCart(models.Model):
     def __str__(self) -> str:
         return str(str(self.user) + " -> " + str(self.title))
 
-class Bstates(models.Model):
 
+class Bstates(models.Model):
 
     states = models.CharField(max_length = 50, unique = True)
     def __str__(self):
@@ -102,8 +101,8 @@ class Billing(models.Model):
     Bstreet = models.CharField(max_length= 264)
     Bapartment = models.CharField(max_length= 264)
     Bcity = models.CharField(max_length= 264)
-    Bzip = models.DecimalField(decimal_places=0, max_digits=6)
-    Bphone = models.DecimalField(decimal_places=0, max_digits=10)
+    Bzip = models.IntegerField(default=0)
+    Bphone = models.IntegerField(default=0)
     Bemail = models.EmailField(max_length= 264)
 
 class Shipping(models.Model):
@@ -113,15 +112,23 @@ class Shipping(models.Model):
     Sstreet = models.CharField(max_length= 264)
     Sapartment = models.CharField(max_length= 264)
     Scity = models.CharField(max_length= 264)
-    Szip = models.DecimalField(decimal_places=0, max_digits=6)
-    Sphone = models.DecimalField(decimal_places=0, max_digits=10)
+    Szip = models.IntegerField(default=0)
+    Sphone = models.IntegerField(default=0)
     Semail = models.EmailField(max_length= 264)
 
 class Payment(models.Model):
-    cardno = models.DecimalField(decimal_places=0, max_digits=16)
+    cardno = models.IntegerField(default=0)
     namecard = models.CharField(max_length= 264)
-    cvv = models.DecimalField(decimal_places=0, max_digits=3)
-    validity = models.DateTimeField()
+    cvv = models.IntegerField(default=0)
+    validity = models.DateField(default="0000-00")
+
+    def save(self, *args, **kwargs):
+        check = self.validity.split("-")
+        print(check)
+        if len(check) == 2:
+            self.validity += "-01"
+            print(self.validity)
+        super().save(*args, **kwargs)
     
 
 

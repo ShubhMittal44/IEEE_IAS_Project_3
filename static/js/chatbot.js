@@ -46,7 +46,7 @@ function botVoice(message) {
       speech.text = "I am fine, thanks. How are you?";
     }
     if (message.includes('hello')) {
-      speech.text = "Hi!! Welcome to our Website";
+      speech.text = "Hi!! Welcome to our Website. How can I help you today?";
     }
     if (message.includes('good')) {
       speech.text = "That's Nice";
@@ -58,7 +58,11 @@ function botVoice(message) {
       speech.text = "Of course. Where are you currently?";
     }
     if (message.includes('are you a bot')) {
-      speech.text = "Yes, I am a bot and a good one. Let me prove it. How can I help you?";
+      speech.text = "Yes, I am a bot and a good one. Let me prove it by helping you. How can I assist you?";
+    }
+    if (message.includes('bye')) {
+      speech.text = "Good Bye. Hope to see you soon.";
+      setTimeout(() => {  	$('.chat-box').toggleClass('hide'); $('.chat-bubble').toggleClass('chat-bubble-hover'); }, 3000);
     }
 
     if (message.includes('one') || message.includes('1') || message.includes('what is the difference between bright, medium and low light plants') || message.includes('bright, medium and low light plants') ||(message.includes('bright light plant') && message.includes('what'))  || (message.includes('medium light plant') && message.includes('what'))  || (message.includes('low light plant') && message.includes('what'))) {

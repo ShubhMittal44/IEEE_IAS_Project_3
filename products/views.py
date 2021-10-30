@@ -8,7 +8,7 @@ def home(request):
     context = {}
     return render(request, 'home.html', context)
 
-def item_list(request):
+def items_display(request):
     
     items = ItemMain.objects.all()
     for i in ItemRating.objects.all():
@@ -31,7 +31,7 @@ def item_list(request):
     context = {
         "items": l
     }
-    return render(request, "products/item_list.html", context)
+    return render(request, "products/items_display.html", context)
 
 def itemView(request, the_slug):
     if request.method == 'GET':

@@ -2,4 +2,4 @@ function Log(){
   window.location = "order_success"      
 }
 
-setTimeout(Log, 200);
+setTimeout(Log, 2000);

@@ -8,8 +8,7 @@ def home(request):
     context = {}
     return render(request, 'home.html', context)
 
-def items_display(request):
-    
+def items_display(request):    
     items = ItemMain.objects.all()
     for i in ItemRating.objects.all():
         print(i.title, i.title_id)
@@ -174,7 +173,7 @@ def checkout(request):
             billing.save()
             payment.save()
             shipping.save()        
-            return render(request, 'success')
+            return render(request, 'success.html')
         else:
             return redirect('login')
     else:

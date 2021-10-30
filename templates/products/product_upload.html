@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+ 
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/product_upload.css' %}">
+<div class="wrapper">
+   <div class="title">
+      UPLOAD YOUR PRODUCT
+   <hr></div>
+   
+   <form class="form">
+      {% csrf_token %}
+      <div class="inputfield">
+         <label>PRODUCT NAME</label>
+         <input type="text" class="input" placeholder="Enter the product name">
+      </div>  
+      <div class="inputfield">
+         <label>PRICE</label>
+         <input  type="number" step="0.01" class="input" placeholder="Actual price of the product">
+      </div>  
+      <div class="inputfield">
+         <label>DISCOUNT PERCENTAGE</label>
+         <input type="number" step="0.1" class="input" placeholder="Discount on the product">
+      </div> 
+      <div class="inputfield">
+         <label>SHIPPING PRICE</label>
+         <input  type="number" step="0.01" class="input" placeholder="Shipping Price">
+      </div>  
+      <div class="inputfield">
+         <label>CATEGORY</label>
+         <div class="custom_select">
+            <select>
+            <option value="">Select</option>
+            <option value="trees">Trees</option>
+            <option value="plant">Plant</option>
+            <option value="fertilizer">Fertilizer</option>
+            <option value="soil">Soil</option>
+            <option value="seeds">Seeds</option>
+            </select>
+         </div>
+      </div>
+      <div class="inputfield">
+         <label>PRODUCT TYPE</label>
+         <div class="custom_select">
+            <select>
+            <option value="">Select</option>
+            <option value="male">PLANT</option>
+            <option value="female">FERTILIZER</option>
+            <option value="female">SOIL</option>
+            <option value="female">SEEDS</option>
+            </select>
+         </div>
+      </div> 
+      <div class="inputfield">
+      <label>NO. OF PRODUCTS</label>
+      <input type="number"  class="input" placeholder="Number of products">
+   </div>  
+      <div class="inputfield">
+         <label>DESCRIPTION</label>
+         <textarea class="textarea" placeholder="Write a short description about the product"></textarea>
+      </div> 
+      <div class="inputfield">
+         <label>PLANTING AND CARE</label>
+         <textarea class="textarea" placeholder="Write about the planting and caring instructions of the product"></textarea>
+      </div> 
+      SPECIFICATIONS
+      <div class="inputfield">
+      <label>Common Name</label>
+      <input class="input" placeholder="Common name of the product">
+      </div> 
+      <div class="inputfield">
+         <label>Plant Spread</label>
+         <input class="input" placeholder="Plant Spread for the product">
+      </div> 
+      <div class="inputfield">
+         <label>Max Height</label>
+         <input class="input" placeholder="Max Height of the product">
+         </div> 
+      <div class="inputfield">
+         <label>Sunlight</label>
+         <input class="input" placeholder="Sunlight for the product">
+         </div> 
+      <div class="inputfield">
+         <label>Watering</label>
+         <input class="input" placeholder="Watering for the product">
+      </div>   
+      <div class="inputfield">
+         <label>Soil</label>
+         <input class="input" placeholder="Soil for the product">
+         </div> 
+      <div class="inputfield">
+         <label>Optimum Temperature</label>
+         <input class="input" placeholder="Temperature for the product">
+         </div> 
+      <div class="inputfield">
+         <label>Fertilizers</label>
+         <input class="input" placeholder="Fertilizers for the product">
+         </div> 
+      <div class="inputfield">
+         <label>Bloom Time</label>
+         <input class="input" placeholder="Bloom Time of the product">
+         </div> 
+
+
+   <div class="mainimage">
+   
+   <input type="file">
+   </div><br>
+   <div class="1stimage"> <input type="file"></div><br>
+   <div class="2ndimage"> <input type="file"></div><br>
+   <div class="3rdimage"> <input type="file"></div><br> 
+   <a href="#" class="btn-3d-sub"><span>SUBMIT</span></a><br />
+</form>
+</div>
+
+{% endblock content %}

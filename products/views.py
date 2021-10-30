@@ -119,6 +119,10 @@ def addReview(request, the_slug):
     
     return redirect("/items/"+the_slug)
 
+def product_upload(request):
+    context = {}
+    return render(request, 'products/product_upload.html', context)
+
 def faq(request):
     context = {}
     return render(request, 'faq.html', context)

@@ -1,11 +1,39 @@
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
-from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping
+from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping, ItemMain
+from blogs.models import BlogPlant
 import json
 # Create your views here.
 
 def home(request):
     context = {}
+    items = ItemMain.objects.all().order_by('-id')[:4]
+    items_list = []
+    for i in items:
+        l = []
+        l.append(i.title)
+        l.append(i.price)
+        l.append(i.slug)
+        ima = ItemsImages.objects.filter(title = i)[0]
+        print(ima.image)
+        l.append(ima.image)
+        items_list.append(l)
+    context['items'] = items_list
+    blogs = BlogPlant.objects.all().order_by('-id')[:3]
+    blogs_list = []
+    for i in blogs:
+        l = []
+        l.append(i.blog_title)
+        l.append(i.author)
+        l.append(i.publish_date)
+        l.append(i.blog_image)
+        l.append(i.slug)
+        l.append(i.blog_content[:100])
+        blogs_list.append(l)
+    context['blogs'] = blogs_list
+
+
+    # print(items)
     return render(request, 'home.html', context)
 
 def items_display(request):    

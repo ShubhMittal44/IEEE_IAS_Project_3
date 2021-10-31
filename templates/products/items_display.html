@@ -19,29 +19,23 @@
     <div class="py-2 border-bottom ml-3">
         <h6 class="font-weight-bold">Categories</h6>
         <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="artisan"> <label for="artisan">Combo Packs - Plants</label> </div>
-            <div class="form-group"> <input type="checkbox" id="breakfast"> <label for="breakfast">Miniature Gardens</label> </div>
-            <div class="form-group"> <input type="checkbox" id="healthy"> <label for="healthy">Terrariums</label> </div>
-        </form>
-    </div>
-    <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Accompainments</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="tea"> <label for="tea">Planters</label> </div>
-            <div class="form-group"> <input type="checkbox" id="cookies"> <label for="cookies">Seeds</label> </div>
-            <div class="form-group"> <input type="checkbox" id="pastries"> <label for="pastries">Bulbs</label> </div>
-            <div class="form-group"> <input type="checkbox" id="dough"> <label for="dough">Organic Vegetables</label> </div>
-            <div class="form-group"> <input type="checkbox" id="choco"> <label for="choco">Soil and Fertilizer</label> </div>
-        </form>
+        <form type="get" action="{% url 'itemlist' %}">
+            <div class="form-group"> <input type="checkbox" value="plants" name="cat"> <label for="plants">Plants</label> </div>
+            <div class="form-group"> <input type="checkbox" value="soil" name="cat"> <label for="breakfast">Soil</label> </div>
+            <div class="form-group"> <input type="checkbox" value="seeds" name="cat"> <label for="healthy">Seeds</label> </div>
+            <div class="form-group"> <input type="checkbox" value="fertilizer" name="cat"> <label for="healthy">Fertilizer</label> </div>
+            <div class="form-group"> <input type="checkbox" value="tree" name="cat"> <label for="healthy">Tree</label> </div>
+
+        
     </div>
     <div class="py-2 ml-3">
         <h6 class="font-weight-bold">Top Offers</h6>
         <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="25off"> <label for="25">25% off</label> </div>
-            <div class="form-group"> <input type="checkbox" id="5off"> <label for="5off" id="off">5% off on Indoor Plants</label> </div>
+        
+            <div class="form-group"> <input type="checkbox" value="25" name="offer" > <label for="25">25% off</label> </div>
+            <div class="form-group"> <input type="checkbox" value="15" name="offer" > <label for="25">25% off</label> </div>
+            <div class="form-group"> <input type="checkbox" value="5"  name="offer"> <label for="5" id="off">5% off</label> </div>
+
         </form>
     </div>
 </div>
@@ -54,29 +48,22 @@
     <div class="py-2 border-bottom ml-3">
         <h6 class="font-weight-bold">Categories</h6>
         <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="artisan"> <label for="artisan">Combo Packs - Plants</label> </div>
-            <div class="form-group"> <input type="checkbox" id="breakfast"> <label for="breakfast">Miniature Gardens</label> </div>
-            <div class="form-group"> <input type="checkbox" id="healthy"> <label for="healthy">Terrariums</label> </div>
-        </form>
-    </div>
-    <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Accompainments</h6>
-        <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="tea"> <label for="tea">Planters</label> </div>
-            <div class="form-group"> <input type="checkbox" id="cookies"> <label for="cookies">Seeds</label> </div>
-            <div class="form-group"> <input type="checkbox" id="pastries"> <label for="pastries">Bulbs</label> </div>
-            <div class="form-group"> <input type="checkbox" id="dough"> <label for="dough">Organic Vegetables</label> </div>
-            <div class="form-group"> <input type="checkbox" id="choco"> <label for="choco">Soil and Fertilizer</label> </div>
-        </form>
+        <form type="get" action="{% url 'itemlist' %}">
+            <div class="form-group"> <input type="checkbox" value="plants" name="cat"> <label for="plants">Plants</label> </div>
+            <div class="form-group"> <input type="checkbox" value="soil" name="cat"> <label for="breakfast">Soil</label> </div>
+            <div class="form-group"> <input type="checkbox" value="seeds" name="cat"> <label for="healthy">Seeds</label> </div>
+            <div class="form-group"> <input type="checkbox" value="fertilizer" name="cat"> <label for="healthy">Fertilizer</label> </div>
+            <div class="form-group"> <input type="checkbox" value="tree" name="cat"> <label for="healthy">Tree</label> </div>
+
     </div>
     <div class="py-2 ml-3">
         <h6 class="font-weight-bold">Top Offers</h6>
         <div id="orange"><span class="fa fa-minus"></span></div>
-        <form>
-            <div class="form-group"> <input type="checkbox" id="25off"> <label for="25">25% off</label> </div>
-            <div class="form-group"> <input type="checkbox" id="5off"> <label for="5off" id="off">5% off on Indoor Plants</label> </div>
+        
+            <div class="form-group"> <input type="checkbox" value="25" name="offer"> <label for="25">25% off</label> </div>
+            <div class="form-group"> <input type="checkbox" value="15" name="offer"> <label for="25">25% off</label> </div>
+            <div class="form-group"> <input type="checkbox" value="5" name="offer"> <label for="5off" id="off">5% off</label> </div>
+            <input type = "submit" value="Apply">
         </form>
     </div>
 </section>
@@ -84,7 +71,7 @@
 <section id="products">
     <div class="container">
         <div class="d-flex flex-row">
-            <div class="text-muted m-2" id="res">Showing 44 results</div>
+            <div class="text-muted m-2" id="res">{{ items|length }} results found </div>
             <div class="ml-auto mr-lg-4">
                 <div id="sorting" class="border rounded p-1 m-1"> <span class="text-muted"><b>Sort by</b></span> <select name="sort" id="sort">
                         <option value="popularity"><b>Popularity</b></option>

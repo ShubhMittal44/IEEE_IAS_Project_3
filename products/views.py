@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
-from .models import ItemMain, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping, ItemMain
+from .models import ItemMain, ItemsCat, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping, ItemMain
 from blogs.models import BlogPlant
 import json
 # Create your views here.
@@ -37,9 +37,22 @@ def home(request):
     return render(request, 'home.html', context)
 
 def items_display(request):    
-    items = ItemMain.objects.all()
-    for i in ItemRating.objects.all():
-        print(i.title, i.title_id)
+    cat = request.GET.getlist('cat', [])
+    offerss = request.GET.getlist('offer', [])
+    items = []
+    print(cat, offerss)
+    offerss = list(map(int, offerss))
+    if len(offerss) > 0:
+        min_off = min(offerss)
+    if len(cat) > 0 or len(offerss) > 0:
+        if (len(offerss) and len(cat)):
+            items = ItemMain.objects.filter(category__in = ItemsCat.objects.filter(catName__in=cat), offers__gt=min_off)
+        elif (len(cat)):
+            items = ItemMain.objects.filter(category__in = ItemsCat.objects.filter(catName__in=cat))
+        else:
+            items = ItemMain.objects.filter(offers__gt=min_off)
+    else:
+        items = ItemMain.objects.all()
     l = []
     for i in items:
         ll = []

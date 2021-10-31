@@ -1,3 +1,4 @@
+from typing import AnyStr
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from .models import ItemMain, ItemsCat, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping, ItemMain
@@ -162,6 +163,99 @@ def addReview(request, the_slug):
 
 def product_upload(request):
     context = {}
+    if request.method == 'POST':
+        title = request.POST.get('title', "")
+        price = int(request.POST.get('price', 0))
+        offers = int(request.POST.get('offers', 0))
+        shippingCharges = int(request.POST.get('shippingCharges', 0))
+        category = request.POST.get('category', "tree")
+        countofproducts = int(request.POST.get('countofproducts', 0))
+        description = request.POST.get('description', "")
+        plantingAndCare = request.POST.get('plantingAndCare', "")
+        availablity = False
+        if countofproducts:
+            availablity = True
+
+        itemmain = ItemMain.objects.create(
+            title = title,
+            price = price,
+            description = description,
+            category = ItemsCat.objects.filter(catName=category)[0],
+            availablity = availablity,
+            shippingCharges = shippingCharges,
+            offers = offers,
+            plantingAndCare = plantingAndCare
+        )
+        itemmain.save()
+
+        commonName = request.POST.get('commonName', "")
+        plantSpread = request.POST.get('plantSpread', "")
+        maxHeight = request.POST.get('maxHeight', "")
+        sunlight = request.POST.get('sunlight', "")
+        watering = request.POST.get('watering', "")
+        soil = request.POST.get('soil', "")
+        temp = request.POST.get('temp', "")
+        ferti = request.POST.get('ferti', "")
+        bloomTime = request.POST.get('bloomTime', "")
+
+        itemsSpecifications = ItemsSpecifications.objects.create(
+            title = ItemMain.objects.filter(title = title)[0],
+            commonName = commonName,
+            plantSpread = plantSpread,
+            maxHeight = maxHeight,
+            sunlight = sunlight,
+            watering = watering,
+            soil = soil,
+            temp = temp,
+            ferti = ferti,
+            bloomTime = bloomTime
+        )
+        itemsSpecifications.save()
+
+        img0 = request.FILES['img0']
+        img1 = request.FILES['img1']
+        img2 = request.FILES['img2']
+        img3 = request.FILES['img3']
+
+        img = ItemsImages.objects.create(
+            title = ItemMain.objects.filter(title=title)[0],
+            image = img0
+        )
+        img.save()
+
+        img = ItemsImages.objects.create(
+            title = ItemMain.objects.filter(title=title)[0],
+            image = img1
+        )
+        img.save()
+        img = ItemsImages.objects.create(
+            title = ItemMain.objects.filter(title=title)[0],
+            image = img2
+        )
+        img.save()
+        img = ItemsImages.objects.create(
+            title = ItemMain.objects.filter(title=title)[0],
+            image = img3
+        )
+        img.save()
+
+        rat = ItemRating.objects.create(
+            title = ItemMain.objects.filter(title=title)[0],
+            ratingCount = 1,
+            rating = 5,
+            feedback = ""
+        )
+
+        itemFaq = ItemFaq.objects.create(
+            title = ItemMain.objects.filter(title=title)[0],
+            question = "",
+            answer = ""
+        )
+
+        rat.save()
+        itemFaq.save()
+
+
     return render(request, 'products/product_upload.html', context)
 
 def faq(request):

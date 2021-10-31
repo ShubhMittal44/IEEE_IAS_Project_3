@@ -10,7 +10,7 @@ def blog_home(request):
         'gardening': 'GARDENING DIY\'S',
         'styling' : 'PLANTS STYLING',
         'kitchen' : 'KITCHEN GARDENING',
-        'developement' : 'SUSTAINABLE DEVELOPEMENT'
+        'development' : 'SUSTAINABLE DEVELOPEMENT'
         }
     }
     return render(request, "blogs/blog_home.html", context)

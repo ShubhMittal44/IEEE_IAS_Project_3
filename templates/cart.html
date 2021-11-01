@@ -12,11 +12,8 @@
       <span class="count">{{ items|length }} items in the bag</span>
     </header>
     <!-- End Header -->
-    <script>
-      console.log(" {{ items }} ")
-    </script>
     <!-- Product List -->
-    <section class="cart-container">
+    <!-- <section class="cart-container">
       <div v-if="products.length > 0">
         <ul class="products">
         <li class="row" v-for="(product, index) in products">
@@ -66,9 +63,117 @@
       <div class="checkout">
         <button type="button">Check Out</button>
       </div>
-    </section>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
-  <script src="{% static 'js/cart.js' %}"></script>
+    </section> -->
+    <table class="items">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item">
+              <div class="item-front">
+                <img src="http://damonbauer.me/cart/chemex2.jpg" />
+              </div>
+              <div class="item-back">
+                <img src="http://damonbauer.me/cart/chemex.jpg" />
+              </div>
+            </div>
+            <p>
+                <span class="itemname">ALOE VERA<br /></span>
+              <span class="itemNum">1A00052150</span>
+            </p>
+            <p class="description">The aloe vera plant is an easy, attractive succulent that makes for a great indoor companion</p>
+          </td>
+          <td>₹180.00</td>
+          <td>
+            <input type="number" class="quantity" value="1" min="1" />
+            <a href="#" class="remove">Remove</a>
+          </td>
+          <td class="itemTotal">₹180.00</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item">
+              <div class="item-front">
+                <img src="http://damonbauer.me/cart/skerton2.jpg" />
+              </div>
+              <div class="item-back">
+                <img src="http://damonbauer.me/cart/skerton.jpg" />
+              </div>
+            </div>
+            <p>
+                <span class="itemname">COLEUS<br /></span>
+              <span class="itemNum">12B5421000</span>
+            </p>
+            <p class="description">Coleus is a genus of annual or perennial herbs or shrubs, sometimes succulent, sometimes with a fleshy or tuberous rootstock.</p>
+          </td>
+          <td>₹245.00</td>
+          <td>
+            <input type="number" class="quantity" value="1" min="1" />
+            <a href="#" class="remove">Remove</a>
+          </td>
+          <td class="itemTotal">₹245.00</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item">
+              <div class="item-front">
+                <img src="http://damonbauer.me/cart/kettle2.jpg" />
+              </div>
+              <div class="item-back">
+                <img src="http://damonbauer.me/cart/kettle.jpg" />
+              </div>
+            </div>
+            <p>
+              <span class="itemname">ARABIAN JASMINE<br /></span>
+              <span class="itemNum">2X45120013</span>
+            </p>
+            <p class="description">
+                Jasminum sambac is a small shrub or vine growing up to 0.5 to 3 m (1.6 to 9.8 ft) in height. It is widely cultivated for its attractive and sweetly fragrant flowers. 
+            </p>
+          </td>
+          <td>₹345.00</td>
+          <td>
+            <input type="number" class="quantity" value="1" min="1" />
+            <a href="#" class="remove">Remove</a>
+          </td>
+          <td class="itemTotal">₹345.00</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item">
+              <div class="item-front">
+                <img src="http://damonbauer.me/cart/zing2.jpg" />
+              </div>
+              <div class="item-back">
+                <img src="http://damonbauer.me/cart/zing.jpg" />
+              </div>
+            </div>
+            <p>
+                <span class="itemname">HOLY BASIL<br /></span>
+              <span class="itemNum">12PDF12005</span>
+            </p>
+            <p class="description">Tulsi is cultivated for religious and traditional medicine purposes, and also for its essential oil. It is widely used as a herbal tea.</p>
+          </td>
+          <td>₹120.00</td>
+          <td>
+            <input type="number" class="quantity" value="1" min="1" />
+            <a href="#" class="remove">Remove</a>
+          </td>
+          <td class="itemTotal">₹120.00</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="{% static 'js/cart.js' %}"></script>
 
 {% endblock %}

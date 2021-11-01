@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-4">
                 <div class="footer-about">
                     <h3>About Us</h3>
                     <p>
@@ -28,8 +28,7 @@
                 </div>
             </div>
 
-
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-4">
                 <div class="footer-contact">
                     <h3>Get In Touch</h3>
                     <p><i class="fa fa-map-marker-alt"></i>VIT, Vellore, India</p>
@@ -38,20 +37,8 @@
                     <p><i class="far fa-clock"></i>Mon - Fri, 9AM - 10PM</p>
                 </div>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="footer-links">
-                    <h3>Useful Links</h3>
-                    <a href="">Plant Care</a>
-                    <a href="">Kit</a>
-                    <a href="">Offers</a>
-                    <a href="">Plant Subscription</a>
-                    <a href="">Pots and Planters</a>
-                    <a href="">Green Gifting</a>
-                </div>
-            </div>
                 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-4">
                 <div class="footer-project">
                     <h3>New Offers</h3>
                     <a href=""><img src="{% static 'images/footer/img-1.jpg' %}" alt="Image"></a>
@@ -79,10 +66,10 @@
 
                 <div class="col-md-6">
                     <div class="copy-menu">
-                        <a href="">About</a>
+                        <a href="{% url 'our_team' %}">About Us</a>
                         <a href="">Terms</a>
                         <a href="">Privacy</a>
-                        <a href="">Contact</a>
+                        <a href="{% url 'contact' %}">Contact</a>
                     </div>
                 </div>
 

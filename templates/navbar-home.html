@@ -13,8 +13,8 @@
                     <div class="top-header-content d-flex align-items-center justify-content-between">
                         <!-- Top Header Content -->
                         <div class="top-header-meta">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: info@vit.ac.in</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:+91 1298768327</span></a>
+                            <a href="{% url 'contact' %}" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: info@vit.ac.in</span></a>
+                            <a href="{% url 'contact' %}" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:+91 1298768327</span></a>
                         </div>
 
                         <!-- Top Header Content -->
@@ -39,7 +39,7 @@
                             </div>
                             <!-- Cart -->
                             <div class="cart">
-                                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
+                                <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
                             </div>
                         </div>
                     </div>
@@ -74,31 +74,25 @@
                         <!-- Navbar Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">Products</a>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="">Products</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="shop.html">Shop</a>
-                                            <ul class="dropdown">
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-details.html">Shop Details</a></li>
-                                                <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="{% url 'itemlist' %}">Shop</a></li>
+                                        <li><a href="{% url 'itemlist' %}">Shop Details</a></li>
+                                        <li><a href="{% url 'cart' %}">Shopping Cart</a></li>
+                                        <li><a href="{% url 'checkout' %}">Checkout</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="shop.html">Blogs</a></li>
-                                <li><a href="about.html">Our Team</a></li>
+                                <li><a href="">Blogs</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'blogs' %}">Home</a></li>
+                                        <li><a href="{% url 'uploading_blogs' %}">Upload a Blog</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'our_team' %}">Our Team</a></li>
                                 
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
-
-                            <!-- Search Icon -->
-                            <div id="searchIcon">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </div>
-
                         </div>
                         <!-- Navbar End -->
                     </div>

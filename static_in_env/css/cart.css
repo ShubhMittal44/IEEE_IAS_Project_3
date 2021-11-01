@@ -45,22 +45,13 @@ header .count {
 
 /* --- MEDIUM & LARGE SCREEN --- */
 @media all and (min-width: 600px) {
-    html {
-        font-size: 14px;
-    }
-
     .cart-container {
         width: 75%;
         max-width: 960px;
     }
-
 }
-
-/* --- LARGE SCREEN --- */
-@media all and (min-width: 992px) {
-    html {
-        font-size: 16px;
-    }
+body {
+    font-family: "Gill Sans", sans-serif;
 }
 
 .carttitle {
@@ -68,12 +59,90 @@ header .count {
 
 }
 
+.content {
+    padding: 20px;
+    zoom: 1;
+}
+
+.itemname {
+    font-weight: 800;
+
+}
+
+.content:before,
+.content:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.content:after {
+    clear: both;
+}
+
+
 @media screen and (min-width: 30em) {
     .content {
         padding: 20px;
 
     }
 }
+
+h1 {
+    color: #006400;
+    margin-bottom: 0;
+
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    color: #2f8d69;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    -moz-transition: color 0.25s ease-in, border 0.25s ease-in, background-color 0.25s ease-in;
+    -o-transition: color 0.25s ease-in, border 0.25s ease-in, background-color 0.25s ease-in;
+    -webkit-transition: color 0.25s ease-in, border 0.25s ease-in, background-color 0.25s ease-in;
+    transition: color 0.25s ease-in, border 0.25s ease-in, background-color 0.25s ease-in;
+}
+
+a:hover {
+    color: #00fa9a;
+    border-bottom-color: #00fa9a;
+}
+
+a.cta {
+    margin: 25px auto;
+    width: 50%;
+    position: relative;
+    outline: 0;
+    padding: 8px 0;
+    display: block;
+    cursor: pointer;
+    color: #eee;
+    background-color: #2ecc71;
+    border: 0;
+    font-size: 0.875em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a.cta:hover {
+    background-color: #25a25a;
+    color: #fff;
+}
+
+a.cta:active {
+    top: 2px;
+    background-color: #1b7943;
+}
+
+
 
 table {
     width: 100%;
@@ -143,7 +212,7 @@ th {
     background: #50c878;
     color: whitesmoke;
     padding: 10px 0;
-    text-align: center;
+    text-align: center !important;
     font-size: 0.9em;
 
 }
@@ -255,7 +324,7 @@ td input.quantity {
 .item {
     display: none;
     position: relative;
-    z-index: 10;
+    z-index: 1000;
     width: 75px;
     height: 100px;
     margin-right: 25px;
@@ -315,7 +384,7 @@ td input.quantity {
         -moz-transform: perspective(300) rotateX(0);
         -webkit-transform: perspective(300) rotateX(0);
         transform: perspective(300) rotateX(0);
-        z-index: 10;
+        z-index: 900;
         background: #fff;
     }
 
@@ -323,7 +392,7 @@ td input.quantity {
         -moz-transform: rotateX(-180deg);
         -webkit-transform: rotateX(-180deg);
         transform: rotateX(-180deg);
-        z-index: 10;
+        z-index: 800;
         background: #fafafa;
     }
 

@@ -290,6 +290,28 @@ def cart(request):
 
 def checkout(request):
     context = {}
+    if request.method == 'GET':
+        user = request.user
+        items = UserCart.objects.filter(
+            user = User.objects.filter(username = user)[0]
+            )
+        l = []
+        sprice = 0
+        snewPrice = 0
+        for i in items:
+            ll = []
+            item =ItemMain.objects.filter(title = i.title)[0]
+            price = item.price
+            offer = item.offers
+            newPrice = price - (price * offer)//100
+
+            sprice += price
+            snewPrice += newPrice
+            i.delete()
+        context['price'] = sprice
+        context['offer'] = sprice - snewPrice
+        context['newPp'] = snewPrice
+        
     if request.method == 'POST':
         if request.user.is_authenticated:
             Bfirst_name = request.POST['Bfirst_name']

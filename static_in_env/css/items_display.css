@@ -14,7 +14,7 @@
     display: inline-block
 }
 
-#burgundy {
+#burgundy { 
     color: rgb(153, 40, 59)
 }
 
@@ -423,4 +423,11 @@ h6 {
 #items .card-description{
     margin-top: 2%;
     font-weight: 500;
+}
+
+.applybtn{
+    color:white; 
+    background: #28a745 !important; 
+    border: 1px solid #28a745; 
+    width:40%
 }

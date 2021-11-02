@@ -347,6 +347,7 @@ def success(request):
     context = {}
     return render(request, 'success.html', context)
 
+
 def order_success(request):
     context = {}
     return render(request, 'order_success.html', context)

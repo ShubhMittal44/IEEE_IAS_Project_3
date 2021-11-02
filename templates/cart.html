@@ -68,106 +68,29 @@
       <thead>
         <tr>
           <th>Product</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        {% for item in items %}
           <td>
             <div class="item">
               <div class="item-front">
-                <img src="http://damonbauer.me/cart/chemex2.jpg" />
+                <img src="/media/{{ item.0 }}" />
               </div>
               <div class="item-back">
-                <img src="http://damonbauer.me/cart/chemex.jpg" />
+                <img src="/media/{{ item.0 }}" />
               </div>
             </div>
             <p>
-                <span class="itemname">ALOE VERA<br /></span>
+                <span class="itemname">{{ item.1 }}<br /></span>
               <span class="itemNum">1A00052150</span>
             </p>
-            <p class="description">The aloe vera plant is an easy, attractive succulent that makes for a great indoor companion</p>
+            <p class="description">{{ item.2 }}</p>
           </td>
-          <td>₹180.00</td>
-          <td>
-            <input type="number" class="quantity" value="1" min="1" />
-            <a href="#" class="remove">Remove</a>
-          </td>
-          <td class="itemTotal">₹180.00</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="item">
-              <div class="item-front">
-                <img src="http://damonbauer.me/cart/skerton2.jpg" />
-              </div>
-              <div class="item-back">
-                <img src="http://damonbauer.me/cart/skerton.jpg" />
-              </div>
-            </div>
-            <p>
-                <span class="itemname">COLEUS<br /></span>
-              <span class="itemNum">12B5421000</span>
-            </p>
-            <p class="description">Coleus is a genus of annual or perennial herbs or shrubs, sometimes succulent, sometimes with a fleshy or tuberous rootstock.</p>
-          </td>
-          <td>₹245.00</td>
-          <td>
-            <input type="number" class="quantity" value="1" min="1" />
-            <a href="#" class="remove">Remove</a>
-          </td>
-          <td class="itemTotal">₹245.00</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="item">
-              <div class="item-front">
-                <img src="http://damonbauer.me/cart/kettle2.jpg" />
-              </div>
-              <div class="item-back">
-                <img src="http://damonbauer.me/cart/kettle.jpg" />
-              </div>
-            </div>
-            <p>
-              <span class="itemname">ARABIAN JASMINE<br /></span>
-              <span class="itemNum">2X45120013</span>
-            </p>
-            <p class="description">
-                Jasminum sambac is a small shrub or vine growing up to 0.5 to 3 m (1.6 to 9.8 ft) in height. It is widely cultivated for its attractive and sweetly fragrant flowers. 
-            </p>
-          </td>
-          <td>₹345.00</td>
-          <td>
-            <input type="number" class="quantity" value="1" min="1" />
-            <a href="#" class="remove">Remove</a>
-          </td>
-          <td class="itemTotal">₹345.00</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="item">
-              <div class="item-front">
-                <img src="http://damonbauer.me/cart/zing2.jpg" />
-              </div>
-              <div class="item-back">
-                <img src="http://damonbauer.me/cart/zing.jpg" />
-              </div>
-            </div>
-            <p>
-                <span class="itemname">HOLY BASIL<br /></span>
-              <span class="itemNum">12PDF12005</span>
-            </p>
-            <p class="description">Tulsi is cultivated for religious and traditional medicine purposes, and also for its essential oil. It is widely used as a herbal tea.</p>
-          </td>
-          <td>₹120.00</td>
-          <td>
-            <input type="number" class="quantity" value="1" min="1" />
-            <a href="#" class="remove">Remove</a>
-          </td>
-          <td class="itemTotal">₹120.00</td>
-        </tr>
+          <td class="itemTotal">{{ item.3 }}</td>
+        </tr>        
+        {% endfor %}
       </tbody>
     </table>
 </div>

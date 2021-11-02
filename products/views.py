@@ -265,18 +265,17 @@ def faq(request):
 def cart(request):
     context = {}
     if request.method == "GET":
-        print('called')
         user = request.user
         items = UserCart.objects.filter(
             user = User.objects.filter(username = user)[0]
             )
-        print(items)
         l = []
         for i in items:
             ll = []
             item =ItemMain.objects.filter(title = i.title)[0]
             ll.append(ItemsImages.objects.filter(title=item)[0].image)
             ll.append(i.title)
+            ll.append(item.description)
             price = item.price
             offer = item.offers
             newPrice = price - (price * offer)//100

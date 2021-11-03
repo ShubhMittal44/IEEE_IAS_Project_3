@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load item_count %}
 <!-- Stylesheet -->
 <link rel="stylesheet" href="{% static 'css/home/navbar.css' %}">
 <link rel="icon" href="{% static 'images/home/core-img/favicon.ico' &}">
@@ -34,13 +34,26 @@
                                 </div>
                             </div>
                             <!-- Login -->
+                            {% if user.is_authenticated %}
+                            <div class="login">
+                                <a href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i> <span>{{ user }}</span></a>
+                            </div>
+                            <!-- Cart -->
+                            <div class="cart">
+                                <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">({% item_count user %})</span></span></a>
+                            </div>
+                             <div class="login">
+                                <a href="{% url 'logout' %}">&nbsp; &nbsp; <span>logout</span></a>
+                            </div>
+                            {% else %}
                             <div class="login">
                                 <a href="{% url 'login' %}"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
                             </div>
                             <!-- Cart -->
                             <div class="cart">
-                                <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
+                                <a href="{% url 'register_customer' %}"><i class="fa fa-user" aria-hidden="true"></i> <span>Sign up</span></a>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

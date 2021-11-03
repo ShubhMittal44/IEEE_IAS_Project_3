@@ -70,7 +70,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries': {
-                'get_plant_Cat':'blogs.template_tags.get_plant_Cat'
+                'get_plant_Cat':'blogs.template_tags.get_plant_Cat',
+                'item_count':'blogs.template_tags.item_count',
                 }
         },
 

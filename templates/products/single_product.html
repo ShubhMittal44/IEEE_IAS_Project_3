@@ -13,7 +13,6 @@
 	function f1(){
 		var token = '{{ csrf_token }}';
 		console.log(token);
-		alert("hi");
 		fetch("{% url 'itemView' the_slug=products.9 %}", {
 		method: "POST",
 		headers:{'X-CSRFToken':token},

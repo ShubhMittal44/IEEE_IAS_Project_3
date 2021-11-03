@@ -7,9 +7,9 @@
 
     <!-- Header -->
     <header class="cart-container">
-      <h1>Shopping Cart</h1>
+      <h1 style="display: inline;">Shopping Cart</h1>
       
-      <span class="count">{{ items|length }} items in the bag</span>
+      <span class="count" style="margin-top: 18px; font-size: 14px;">{{ items|length }} items in the bag</span>
     </header>
     <!-- End Header -->
     <!-- Product List -->
@@ -92,7 +92,6 @@
               </div>
               <p>
                   <span class="itemname">{{ item.1 }}<br /></span>
-                <span class="itemNum">1A00052150</span>
               </p>
               <p class="description">{{ item.2 }}</p>
             </td>
@@ -100,6 +99,13 @@
           </tr>        
           {% endfor %}
         {% endif %}
+        <tr>
+          <td colspan="2" style="text-align: right; font-size: 18px;">
+            {% if items|length > 0 %}
+              <a style="font-size: 16px; text-decoration: none;" href="{% url 'checkout' %}">Checkout</a>
+            {% endif %}
+          </td>
+        </tr>
       </tbody>
     </table>
 </div>

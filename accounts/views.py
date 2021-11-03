@@ -22,7 +22,7 @@ def register_customer(request):
             else:
                 user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password = password1)
                 user.save()
-                return render(request, 'login')
+                return redirect('login')
         else:
             messages.info(request, 'Passwords are not matching')
             return redirect('register_customer')

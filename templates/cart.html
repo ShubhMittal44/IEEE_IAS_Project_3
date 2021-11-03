@@ -72,25 +72,34 @@
         </tr>
       </thead>
       <tbody>
-        {% for item in items %}
-          <td>
-            <div class="item">
-              <div class="item-front">
-                <img src="/media/{{ item.0 }}" />
-              </div>
-              <div class="item-back">
-                <img src="/media/{{ item.0 }}" />
-              </div>
-            </div>
-            <p>
-                <span class="itemname">{{ item.1 }}<br /></span>
-              <span class="itemNum">1A00052150</span>
-            </p>
-            <p class="description">{{ item.2 }}</p>
+        {% if items|length is 0 %}
+        <tr>
+          <td colspan="2" style="text-align: center; height: 100px; font-size: 18px;">
+            Your Cart is Empty
           </td>
-          <td class="itemTotal">{{ item.3 }}</td>
-        </tr>        
-        {% endfor %}
+        </tr>
+        {% else %}
+          {% for item in items %}
+          <tr>
+            <td>
+              <div class="item">
+                <div class="item-front">
+                  <img src="/media/{{ item.0 }}" />
+                </div>
+                <div class="item-back">
+                  <img src="/media/{{ item.0 }}" />
+                </div>
+              </div>
+              <p>
+                  <span class="itemname">{{ item.1 }}<br /></span>
+                <span class="itemNum">1A00052150</span>
+              </p>
+              <p class="description">{{ item.2 }}</p>
+            </td>
+            <td class="itemTotal">{{ item.3 }}</td>
+          </tr>        
+          {% endfor %}
+        {% endif %}
       </tbody>
     </table>
 </div>

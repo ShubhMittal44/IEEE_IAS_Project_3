@@ -47,6 +47,7 @@ footer{
 }
 
 .customer .btn{
+  margin-top: 2%;
   background-color: rgb(11, 138, 11);
   border: 1px;
 }
@@ -55,6 +56,14 @@ footer{
   background-color: rgb(32, 170, 32);
 }
 
+.registerbtn{
+  text-decoration: none;
+  color: green;
+}
+
+.registerbtn:hover{
+  color: #ff6b6b;
+}
 
 /*blog*/
 .onee{

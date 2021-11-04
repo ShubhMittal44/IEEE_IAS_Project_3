@@ -1,5 +1,9 @@
 
 .heading{
+    font-family: Georgia, sans-serif;
+    font-size: 5em;
+    letter-spacing: -2px;
+    text-align: center;
 
 }
 .article-text{
@@ -10,10 +14,9 @@
 
 .article-image{
     
-    height: 80%;
-    width: 80%;  
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 50%;
 
 }

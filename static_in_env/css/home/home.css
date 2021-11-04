@@ -492,7 +492,7 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .single-product-area .product-img {
-    height: 200px;
+    height: 250px;
     position: relative;
     z-index: 1;
     -webkit-transition-duration: 500ms;
@@ -500,7 +500,7 @@ img {
     .single-product-area .product-img a {
       display: block; }
     .single-product-area .product-img img {
-      height: 200px;
+      height: 250px;
       position: relative;
       z-index: 1;
       width: 100%; }

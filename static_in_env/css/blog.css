@@ -108,6 +108,7 @@
 
 
 .blog-img {
+    height: 40%;
     width: 100%;
     display: flex;
     min-height: 185px;

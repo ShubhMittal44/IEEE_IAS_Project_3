@@ -492,6 +492,7 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .single-product-area .product-img {
+    height: 200px;
     position: relative;
     z-index: 1;
     -webkit-transition-duration: 500ms;
@@ -499,6 +500,7 @@ img {
     .single-product-area .product-img a {
       display: block; }
     .single-product-area .product-img img {
+      height: 200px;
       position: relative;
       z-index: 1;
       width: 100%; }
@@ -1871,8 +1873,13 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .single-blog-post .post-thumbnail {
+    height: 250px;
     position: relative;
     z-index: 1; }
+  .single-blog-post .post-thumbnail img{
+    height: 250px;
+    width: 100%;
+  }
   .single-blog-post .post-content .post-title h5 {
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;

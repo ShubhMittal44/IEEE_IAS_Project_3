@@ -43,7 +43,7 @@
 
               </div>
               <div class="para">
-                  <p>{{ i.blog_content|slice:":255" }}</p>
+                  <p>{{ i.blog_content|slice:":100" }}</p>
               </div>
               <a href="{% url 'blog_details' the_slug=i.slug %}" class="square_btn">READ MORE</a>
 

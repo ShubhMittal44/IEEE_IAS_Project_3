@@ -1,5 +1,19 @@
 
+.heading{
 
+}
 .article-text{
-    text-align: center !important;
+    text-align: left !important;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.article-image{
+    
+    height: 80%;
+    width: 80%;  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }

@@ -31,6 +31,7 @@
 }
 
 .gallery .list {
+    vertical-align: middle !important;
     height: 40px;
     width: 140px;
     background: #fff;
@@ -79,6 +80,11 @@
 
 }
 
+.indi-blog-title{
+    padding: 2% 0%;
+    font-weight: 700 !important;
+    height: 70px;
+}
 
 .blog-box {
     padding: 20px;
@@ -148,7 +154,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     font-weight: 500;
-
+    height: 80px;
 }
 
 

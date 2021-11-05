@@ -65,13 +65,27 @@ img {
   max-width: 100%; }
 
 .get-started{
-  color: #70c745 !important;
+  color: white !important;
   font-weight: 600 !important;
   font-size: 16px;
+  background-color: rgb(28, 185, 28) !important;
+  border-radius: 5% !important;
+  padding-top: 8px !important;
+}
 
+.contact{
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  background-color: rgb(28, 185, 28) !important;
+  border-radius: 5% !important;
+  padding-top: 8px !important;
+  transition: ease 3s !important;
 }
 
 .get-started:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4) !important;
   color: white !important;
 }
 
@@ -84,7 +98,7 @@ img {
 }
 
 .slide-img2 {
-  background-image: url(../../images/home/bg-img/2.jpg);
+  background-image: url(../../images/home/bg-img/20.jpg);
 }
 
 .portfolio-thumbnail1{

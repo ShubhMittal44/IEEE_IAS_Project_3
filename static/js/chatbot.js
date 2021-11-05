@@ -68,7 +68,7 @@ function botVoice(message) {
     if (message.includes('one') || message.includes('1') || message.includes('what is the difference between bright, medium and low light plants') || message.includes('bright, medium and low light plants') ||(message.includes('bright light plant') && message.includes('what'))  || (message.includes('medium light plant') && message.includes('what'))  || (message.includes('low light plant') && message.includes('what'))) {
       speech.text = "Bright light plants will do well in direct or strong sunlight for the most part of a day. Medium light plants should stay out of the direct sunlight. They should be placed in a bright room and will enjoy partial or filtered sunlight. Low light plants prefer to stay in the shade or to be displayed under fluorescent light."
     }
-    if (message.includes('two') || message.includes('2') || message.includes('which indoor plants are the easiest to care for') || message.includes('easiest')) {
+    if (message.includes('two') || message.includes('2') || message.includes('which indoor plants are the easiest to care for') || message.includes('easiest') || message.includes('indoor plants')) {
       speech.text = "Pothos, Aglaonema, Sansevieria, Dracaena Lisa, Spider, Corn, Iron, ZZ plants, Bird’s Nest fern, Cacti, Succulents.";
     }
     if (message.includes('three') || message.includes('3') || message.includes('which plants are hardy and can take some level of neglect') || message.includes('hardy') || message.includes('neglect')) {

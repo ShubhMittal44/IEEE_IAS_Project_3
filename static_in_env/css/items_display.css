@@ -46,7 +46,7 @@ nav {
 }
 
 .form-group {
-    margin-bottom: 5px
+    margin-bottom: 0px !important;
 }
 
 label {
@@ -429,5 +429,12 @@ h6 {
     color:white; 
     background: #28a745 !important; 
     border: 1px solid #28a745; 
-    width:40%
+    width:40%;
+    font-size: 14px;
+    padding: 1px;
+    margin-top: 3%;
+}
+
+.base-container{
+    padding: 0% !important;
 }

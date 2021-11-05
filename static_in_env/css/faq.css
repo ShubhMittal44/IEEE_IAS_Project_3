@@ -84,7 +84,7 @@ body{
 }
 .accordion.accordion-type-2 .card .card-header > a {
     background: transparent;
-    color: #00acf0;
+    color: green;
     padding-left: 50px;
 }
 .accordion .card .card-header > a.collapsed {

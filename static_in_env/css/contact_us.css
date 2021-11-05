@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Coda+Caption:800|Source+Sans+Pro&display=swap');
 
 :root {
-    --primary-color: rgb(76, 212, 76);
-    --secondary-color: rgb(17, 202, 17);
+    --primary-color: linear-gradient(to right, rgb(4, 165, 4), rgb(17, 202, 17));
+    --secondary-color: linear-gradient(to top, rgb(4, 165, 4), rgb(17, 202, 17));
 }
 
 * {
@@ -97,7 +97,6 @@ ul {
 }
 
 .form-info ul li i {
-    background: #fff;
     color: var(--secondary-color);
     width: 2rem;
     height: 2rem;
@@ -171,8 +170,8 @@ ul {
 }
 
 .form-input form button:hover {
-    background: #fff;
-    color: var(--secondary-color);
+    background-color: green !important;
+    color: rgba(0, 0, 0, 0.685);
     border: 1px solid var(--secondary-color);
 }
 

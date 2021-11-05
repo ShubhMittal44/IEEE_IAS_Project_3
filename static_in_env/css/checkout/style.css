@@ -1599,7 +1599,7 @@ pre {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #000000;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -1618,30 +1618,30 @@ pre {
     background-color: transparent;
     border: 0; }
   .form-control:focus {
-    color: #495057;
+    color: black;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .form-control::-webkit-input-placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1; }
   .form-control:-ms-input-placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1; }
   .form-control::-ms-input-placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1; }
   .form-control::placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
 
 select.form-control:focus::-ms-value {
-  color: #495057;
+  color: black;
   background-color: #fff; }
 
 .form-control-file,
@@ -9384,14 +9384,14 @@ h1, h2, h3, h4, h5,
     appearance: none; }
 
 .billing-form .form-control {
-  font-weight: 300;
+  font-weight: 400;
   border: transparent !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   height: 58px !important;
   padding-left: 15px;
   padding-right: 15px;
   background: transparent !important;
-  color: rgba(0, 0, 0, 0.4) !important;
+  color: rgba(0, 0, 0, 1) !important;
   font-size: 14px;
   border-radius: 0px;
   -webkit-box-shadow: none !important;

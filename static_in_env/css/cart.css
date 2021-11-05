@@ -1,7 +1,7 @@
 #app {
     margin: 20px 5%;
     padding: 0;
-    font-family: arial, sans-serif;
+    font-family: sans-serif;
     font-size: 12px;
     height: 1000px;
 }
@@ -47,7 +47,7 @@ header .count {
     }
 }
 body {
-    font-family: "Gill Sans", sans-serif;
+    font-family: sans-serif;
 }
 
 .carttitle {
@@ -62,7 +62,7 @@ body {
 
 .itemname {
     font-weight: 800;
-
+    color: black !important;
 }
 
 .content:before,
@@ -294,7 +294,10 @@ td p {
 }
 
 td p.description {
+    color: #414040 !important;
     display: none;
+    height: 180px;
+    overflow-y: hidden;
 }
 
 @media screen and (min-width: 57em) {
@@ -326,6 +329,8 @@ td input.quantity {
     height: 150px;
     margin-right: 25px;
     float: left;
+    margin-left: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2) !important;
 }
 
 .item img {

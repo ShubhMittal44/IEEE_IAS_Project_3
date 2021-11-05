@@ -71,6 +71,8 @@ img {
   background-color: rgb(28, 185, 28) !important;
   border-radius: 5% !important;
   padding-top: 8px !important;
+  transition: all 0.5s !important;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4) !important;
 }
 
 .contact{
@@ -79,17 +81,20 @@ img {
   font-size: 16px;
   background-color: rgb(28, 185, 28) !important;
   border-radius: 5% !important;
-  padding-top: 8px !important;
-  transition: ease 3s !important;
+  padding-top: 8px !important; 
+  transition: all 0.5s !important;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4) !important; 
 }
 
 .get-started:hover{
   transform: scale(1.1);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2) !important;
   color: white !important;
 }
 
 .contact:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2) !important;
   color: white !important;
 }
 
@@ -1894,7 +1899,11 @@ img {
     height: 250px;
     width: 100%;
   }
+  .single-blog-post .post-content .post-title{
+    height: 60px !important;
+  }
   .single-blog-post .post-content .post-title h5 {
+    height: 60px !important;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     line-height: 1.5;

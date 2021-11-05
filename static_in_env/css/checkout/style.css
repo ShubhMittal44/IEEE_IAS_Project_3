@@ -9420,6 +9420,7 @@ h1, h2, h3, h4, h5,
   .cart-detail.cart-total {
     border: none; }
   .cart-detail .btn-primary {
+    padding-top: 13px;
     display: block;
     width: 100%; }
 

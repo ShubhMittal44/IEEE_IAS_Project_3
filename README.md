@@ -21,7 +21,6 @@
   <li>CSS</li>
   <li>Js</li>
   <li>Django</li>
-  <li>MySQL/PostgreSQL</li>
 </ul>
 
 <h3>Scope: </h3>

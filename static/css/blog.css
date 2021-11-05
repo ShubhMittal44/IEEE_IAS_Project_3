@@ -1,5 +1,4 @@
 .title-blog {
-
     transform: translate(50%, -50%);
     text-transform: uppercase;
     font-family: verdana;
@@ -10,12 +9,6 @@
         1px 2px 1px green,
         1px 3px 1px white,
         1px 4px 1px green,
-        1px 5px 1px green,
-        1px 6px 1px white,
-        1px 7px 1px green,
-        1px 8px 1px white,
-        1px 9px 1px green,
-        1px 10px 1px white,
         1px 18px 6px rgba(16, 16, 16, 0.4),
         1px 22px 10px rgba(16, 16, 16, 0.2),
         1px 25px 35px rgba(16, 16, 16, 0.2),
@@ -38,6 +31,7 @@
 }
 
 .gallery .list {
+    vertical-align: middle !important;
     height: 40px;
     width: 140px;
     background: #fff;
@@ -86,6 +80,11 @@
 
 }
 
+.indi-blog-title{
+    padding: 2% 0%;
+    font-weight: 700 !important;
+    height: 70px;
+}
 
 .blog-box {
     padding: 20px;
@@ -108,6 +107,7 @@
 
 
 .blog-img {
+    height: 40%;
     width: 100%;
     display: flex;
     min-height: 185px;
@@ -154,7 +154,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     font-weight: 500;
-
+    height: 80px;
 }
 
 

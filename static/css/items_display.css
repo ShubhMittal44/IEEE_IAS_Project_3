@@ -5,7 +5,7 @@
 .items_display{
     position: relative;
     display: block;
-    height: 1000px;
+    height: 2000px;
 }
 
 #search {
@@ -14,7 +14,7 @@
     display: inline-block
 }
 
-#burgundy {
+#burgundy { 
     color: rgb(153, 40, 59)
 }
 
@@ -46,7 +46,7 @@ nav {
 }
 
 .form-group {
-    margin-bottom: 5px
+    margin-bottom: 0px !important;
 }
 
 label {
@@ -423,4 +423,18 @@ h6 {
 #items .card-description{
     margin-top: 2%;
     font-weight: 500;
+}
+
+.applybtn{
+    color:white; 
+    background: #28a745 !important; 
+    border: 1px solid #28a745; 
+    width:40%;
+    font-size: 14px;
+    padding: 1px;
+    margin-top: 3%;
+}
+
+.base-container{
+    padding: 0% !important;
 }

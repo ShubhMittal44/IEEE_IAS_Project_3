@@ -65,17 +65,36 @@ img {
   max-width: 100%; }
 
 .get-started{
-  color: #70c745 !important;
+  color: white !important;
   font-weight: 600 !important;
   font-size: 16px;
+  background-color: rgb(28, 185, 28) !important;
+  border-radius: 5% !important;
+  padding-top: 8px !important;
+  transition: all 0.5s !important;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4) !important;
+}
 
+.contact{
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  background-color: rgb(28, 185, 28) !important;
+  border-radius: 5% !important;
+  padding-top: 8px !important; 
+  transition: all 0.5s !important;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4) !important; 
 }
 
 .get-started:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2) !important;
   color: white !important;
 }
 
 .contact:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2) !important;
   color: white !important;
 }
 
@@ -84,7 +103,7 @@ img {
 }
 
 .slide-img2 {
-  background-image: url(../../images/home/bg-img/2.jpg);
+  background-image: url(../../images/home/bg-img/20.jpg);
 }
 
 .portfolio-thumbnail1{
@@ -310,9 +329,9 @@ img {
 
 /* :: 3.7.0 ScrollUp */
 #scrollUp {
+  display: none !important;
   background-color: #70c745;
   border-radius: 0;
-  bottom: -100000;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-size: 24px;
@@ -492,6 +511,7 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .single-product-area .product-img {
+    height: 250px;
     position: relative;
     z-index: 1;
     -webkit-transition-duration: 500ms;
@@ -499,6 +519,7 @@ img {
     .single-product-area .product-img a {
       display: block; }
     .single-product-area .product-img img {
+      height: 250px;
       position: relative;
       z-index: 1;
       width: 100%; }
@@ -1871,9 +1892,18 @@ img {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .single-blog-post .post-thumbnail {
+    height: 250px;
     position: relative;
     z-index: 1; }
+  .single-blog-post .post-thumbnail img{
+    height: 250px;
+    width: 100%;
+  }
+  .single-blog-post .post-content .post-title{
+    height: 60px !important;
+  }
   .single-blog-post .post-content .post-title h5 {
+    height: 60px !important;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     line-height: 1.5;

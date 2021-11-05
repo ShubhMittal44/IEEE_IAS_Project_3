@@ -77,7 +77,9 @@
                                 <li><a href="">Products</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'itemlist' %}">Shop</a></li>
-                                        <li><a href="{% url 'product_upload' %}">Product Upload</a></li>
+                                        {% if user.username != "Harsha" %}
+                                            <li><a href="{% url 'product_upload' %}">Product Upload</a></li>
+                                        {% endif %}
                                         <li><a href="{% url 'cart' %}">Shopping Cart</a></li>
                                     </ul>
                                 </li>

@@ -72,6 +72,7 @@ def items_display(request):
     }
     return render(request, "products/items_display.html", context)
 
+@login_required(login_url='login')
 def itemView(request, the_slug):
     if request.method == 'GET':
         context = {}
@@ -145,7 +146,7 @@ def itemView(request, the_slug):
 
     
 
-
+@login_required(login_url='login')
 def addReview(request, the_slug):
 
     if request.method == "POST":

@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from .models import ItemMain, ItemsCat, ItemsImages, ItemRating, ItemsSpecifications, ItemFaq, UserCart,Billing, Bstates, Payment, Shipping, ItemMain
 from blogs.models import BlogPlant
 import json
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
@@ -158,6 +159,7 @@ def addReview(request, the_slug):
     
     return redirect("/items/"+the_slug)
 
+@login_required(login_url='login')
 def product_upload(request):
     context = {}
     if request.method == 'POST':
@@ -259,6 +261,7 @@ def faq(request):
     context = {}
     return render(request, 'faq.html', context)
 
+@login_required(login_url='login')
 def cart(request):
     context = {}
     if request.method == "GET":
@@ -282,6 +285,7 @@ def cart(request):
         context['items'] = l  
     return render(request, 'cart.html', context)
 
+@login_required(login_url='login')
 def clear_cart(request):
     context = {}
     if request.method == "GET":
@@ -306,6 +310,7 @@ def clear_cart(request):
         context['items'] = l  
         return redirect('cart')
 
+@login_required(login_url='login')
 def checkout(request):
     if request.method == 'GET':
         user = request.user
@@ -360,11 +365,12 @@ def our_team(request):
     context = {}
     return render(request, 'our_team.html', context)
 
+@login_required(login_url='login')
 def success(request):
     context = {}
     return render(request, 'success.html', context)
 
-
+@login_required(login_url='login')
 def order_success(request):
     context = {}
     if request.method == "GET":

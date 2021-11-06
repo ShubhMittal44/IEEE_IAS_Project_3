@@ -16,7 +16,6 @@ def home(request):
         l.append(i.price)
         l.append(i.slug)
         ima = ItemsImages.objects.filter(title = i)[0]
-        print(ima.image)
         l.append(ima.image)
         items_list.append(l)
     context['items'] = items_list
@@ -34,14 +33,12 @@ def home(request):
     context['blogs'] = blogs_list
 
 
-    # print(items)
     return render(request, 'home.html', context)
 
 def items_display(request):    
     cat = request.GET.getlist('cat', [])
     offerss = request.GET.getlist('offer', [])
     items = []
-    print(cat, offerss)
     offerss = list(map(int, offerss))
     if len(offerss) > 0:
         min_off = min(offerss)
@@ -122,19 +119,19 @@ def itemView(request, the_slug):
         return render(request, 'products/single_product.html', context)
     else:
         cartItem = json.loads(request.body)
-        print(cartItem)
-        print(cartItem.get('user', ''))
-        print(cartItem.get('item', ''))
         cartModel = UserCart.objects.filter(
             user = User.objects.filter(username = cartItem.get('user', ''))[0],
             title = ItemMain.objects.filter(title=cartItem.get('item', ''))[0],
         )
-        print(cartModel)
         if cartModel:
             cartModel[0].total += 1
+            cartModel = UserCart.objects.create(
+            user = User.objects.filter(username = cartItem.get('user', ''))[0],
+            title = ItemMain.objects.filter(title=cartItem.get('item', ''))[0],
+            )
             cartModel[0].save()
         else:
-            cartModel = UserCart(
+            cartModel = UserCart.objects.create(
                 user = User.objects.filter(username = cartItem.get('user', ''))[0],
                 title = ItemMain.objects.filter(title=cartItem.get('item', ''))[0],
                 total = 1
@@ -282,14 +279,10 @@ def cart(request):
             ll.append(newPrice)
             ll.append(i.total)
             l.append(ll)
-        print(l)
-        context['items'] = l
-        
-    print(context)
+        context['items'] = l  
     return render(request, 'cart.html', context)
 
 def checkout(request):
-    context = {}
     if request.method == 'GET':
         user = request.user
         items = UserCart.objects.filter(
@@ -307,7 +300,7 @@ def checkout(request):
 
             sprice += price
             snewPrice += newPrice
-            i.delete()
+        context = {}
         context['price'] = sprice
         context['offer'] = sprice - snewPrice
         context['newPp'] = snewPrice
@@ -368,8 +361,6 @@ def order_success(request):
             ll.append(newPrice)
             ll.append(i.total)
             l.append(ll)
-        print(l)
         context['items'] = l
         
-    print(context)
     return render(request, 'order_success.html', context)

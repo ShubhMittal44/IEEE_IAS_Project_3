@@ -22,7 +22,6 @@ def blog_upload(request):
             blog_title = request.POST['blog_title']
             blog_content = request.POST['blog_content']
             blog_image = request.FILES['blog_image']
-            # print(request.POST['category'])
             category = Category.objects.get(category = request.POST['category'])
             blog = BlogPlant.objects.create(author=author, blog_title=blog_title, blog_content=blog_content, blog_image=blog_image, category=category)
             blog.save()

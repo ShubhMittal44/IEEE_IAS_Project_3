@@ -282,6 +282,30 @@ def cart(request):
         context['items'] = l  
     return render(request, 'cart.html', context)
 
+def clear_cart(request):
+    context = {}
+    if request.method == "GET":
+        user = request.user
+        items = UserCart.objects.filter(
+            user = User.objects.filter(username = user)[0]
+            )
+        l = []
+        for i in items:
+            ll = []
+            item =ItemMain.objects.filter(title = i.title)[0]
+            ll.append(ItemsImages.objects.filter(title=item)[0].image)
+            ll.append(i.title)
+            ll.append(item.description)
+            price = item.price
+            offer = item.offers
+            newPrice = price - (price * offer)//100
+            ll.append(newPrice)
+            ll.append(i.total)
+            l.append(ll)
+            i.delete()
+        context['items'] = l  
+        return redirect('cart')
+
 def checkout(request):
     if request.method == 'GET':
         user = request.user
